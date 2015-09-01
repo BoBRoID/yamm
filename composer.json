@@ -1,0 +1,13 @@
+{
+    "name": "bobroid/yamm",
+    "require": {
+        "yiisoft/yii2": "^2.0@dev"
+    },
+    "authors": [
+        {
+            "name": "BoBRoID",
+            "email": "n.gilko@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev"
+}
