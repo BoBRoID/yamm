@@ -1,7 +1,7 @@
 {
     "name": "bobroid/yamm",
     "require": {
-        "yiisoft/yii2": "^2.0@dev"
+        "yiisoft/yii2": "*"
     },
     "authors": [
         {
@@ -9,5 +9,9 @@
             "email": "n.gilko@gmail.com"
         }
     ],
-    "minimum-stability": "dev"
+    "minimum-stability": "dev",
+    "autoload": {
+        "psr-0": { "bobroid\\yamm\\": "" }
+    },
+    "target-dir": "bobroid/yamm"
 }
