@@ -36,6 +36,18 @@ Main components
   }
 }
 
+.cd-primary-nav ol, .cd-primary-nav ul{
+  list-style: outside none none;
+}
+
+.cd-primary-nav a:hover{
+  text-decoration: none;
+}
+
+.cd-primary-nav ul.is-hidden{
+  padding: 0;
+}
+
 .cd-primary-nav li{
   list-style: none;
   margin: 0;
