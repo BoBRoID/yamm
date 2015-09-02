@@ -110,7 +110,7 @@ class Yamm extends Widget
                 }
             }
 
-            $subitems .= Html::tag('li', Html::tag('a', $parent['label'], [
+            $subitems .= Html::tag('li', Html::tag('a', isset($parent) ? $parent['label'] : '', [
                 'href'  =>  '#0'
             ]), [
                 'class' =>  'go-back'
