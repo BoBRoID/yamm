@@ -20,6 +20,7 @@ class YammAsset extends \yii\web\AssetBundle
     public $sourcePath = '@vendor/bobroid/yamm/assets/';
 
     public $css = [
+        //'css/reset.css',
         'css/style.css',
     ];
 
