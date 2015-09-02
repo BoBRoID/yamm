@@ -11,7 +11,8 @@
     ],
     "minimum-stability": "dev",
     "autoload": {
-        "psr-0": { "bobroid\\yamm\\": "" }
-    },
-    "target-dir": ""
+        "psr-4": {
+            "bobroid\\yamm\\": ""
+        }
+    }
 }
