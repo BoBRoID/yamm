@@ -103,12 +103,11 @@ class Yamm extends Widget
             $subitems = '';
 
             if(empty($parent)){
+                echo '1';
                 if(!isset($item['options'])){
                     $item['options']['class'] = 'cd-secondary-nav is-hidden';
                 }else{
-                    if(isset($item['options']['type'])){
-                        $item['options']['class'] .= isset($item['options']['class']) ? $item['options']['class'].' is-hidden' : 'cd-secondary-nav is-hidden';
-                    }
+                    $item['options']['class'] .= isset($item['options']['type']) ? $item['options']['type'].' is-hidden' : 'cd-secondary-nav is-hidden';
                 }
             }
 
