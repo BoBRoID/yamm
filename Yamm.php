@@ -22,6 +22,8 @@ class Yamm extends Widget
     public $items = [];
 
     public $options = [];
+
+    public $theme;
     /**
      * @var array the dropdown widget options
      */
@@ -48,7 +50,14 @@ class Yamm extends Widget
 
         $this->options['menuLabel'] = isset($this->options['menuLabel']) ? $this->options['menuLabel'] : $this->defaultMenuLabel;
         $this->options['searchLabel'] = isset($this->options['searchLabel']) ? $this->options['searchLabel'] : $this->defaultSearchLabel;
-        YammAsset::register($this->getView());
+
+        $a = new \bobroid\yamm\YammAsset();
+
+        if(isset($this->theme) && !empty($this->theme)){
+            $a->css[] = 'themes/'.$this->theme.'.css';
+        }
+
+        $a->register($this->getView());
     }
     
     /**
