@@ -39,7 +39,6 @@ class Yamm extends Widget
     
     /**
      * @inheritdoc
-     * @throws InvalidConfigException
      */
     public function init()
     {
@@ -86,7 +85,7 @@ class Yamm extends Widget
     /**
      * @inheritdoc
      */
-    public function renderItem($item, $level = 1)
+    public function renderItem($item, $parent = [])
     {
         $dropdown = false;
         $options = [];
@@ -101,24 +100,37 @@ class Yamm extends Widget
         $r = Html::a(!isset($item['label']) ? $item : $item['label'], isset($item['url']) ? $item['url'] : '#');
 
         if($dropdown){
-            if($level == 1){
-                $r .= '<ul class="cd-secondary-nav is-hidden">';
+            $subitems = '';
+
+            if(!empty($parent) && is_array($parent)){
+                $subitems .= '<ul class="cd-secondary-nav is-hidden">';
             }else{
-                $r .= '<ul class="is-hidden">';
+                $subitems .= '<ul class="is-hidden">';
             }
-            $level++;
-            $r .= '<li class="go-back"><a href="#0"></a></li>';
+
+            if(!isset($item['options'])){
+                $item['options']['class'] = 'is-hidden';
+            }else{
+                if(isset($item['options']['type'])){
+                    $item['options']['class'] .= isset($item['options']['class']) ? $item['options']['class'].' is-hidden' : 'cd-secondary-nav is-hidden';
+                }
+            }
+
+            $subitems .= Html::tag('li', Html::tag('a', '', [
+                'href'  =>  '#0'
+            ]), [
+                'class' =>  'go-back'
+            ]);
+
             foreach($item['items'] as $sItem){
-                $r .= $this->renderItem($sItem, $level);
+                $subitems .= $this->renderItem($sItem, $parent);
             }
-            $r .= '</ul>';
+
+            $r .= Html::tag('ul', $subitems, $item['options']);
         }
 
         $r = Html::tag('li', $r, $options);
 
-        /*echo "<pre>";
-        print_r($item);
-        echo "</pre>";*/
         return $r;
     }
 
