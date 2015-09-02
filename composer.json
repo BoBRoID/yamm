@@ -13,5 +13,5 @@
     "autoload": {
         "psr-0": { "bobroid\\yamm\\": "" }
     },
-    "target-dir": "yii/bobroid-yamm"
+    "target-dir": ""
 }
