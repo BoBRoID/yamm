@@ -59,7 +59,15 @@ class Yamm extends Widget
 
         $a->register($this->getView());
     }
-    
+
+    public static function begin(){
+        echo '<!-- begin -->';
+    }
+
+    public static function end(){
+        echo '<!-- end -->';
+    }
+
     /**
      * @inheritdoc
      */
