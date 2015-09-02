@@ -48,7 +48,7 @@ Main components
   text-decoration: none;
 }
 
-.cd-primary-nav ul.is-hidden{
+.cd-primary-nav .has-children ul{
   padding: 0;
 }
 
