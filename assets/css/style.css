@@ -36,6 +36,9 @@ Main components
   }
 }
 
+.cd-primary-nav li{
+  list-style: none;
+}
 
 .cd-main-header {
   height: 50px;
