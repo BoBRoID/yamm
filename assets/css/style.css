@@ -38,6 +38,9 @@ Main components
 
 .cd-primary-nav li{
   list-style: none;
+  margin: 0;
+  padding: 0;
+  border: none;
 }
 
 .cd-main-header {
