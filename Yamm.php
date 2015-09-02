@@ -60,12 +60,21 @@ class Yamm extends Widget
         $a->register($this->getView());
     }
 
-    public static function begin(){
-        echo '<!-- begin -->';
+    public function begin(){
+        echo Html::tag('header', $this->renderLogo().Html::tag('ul', Html::tag('li', Html::tag('a', $this->options['searchLabel'].Html::tag('span'), [
+                    'class' =>  'cd-search-trigger',
+                    'href'  =>  '#cd-search'
+                ])).Html::tag('li', Html::tag('a', $this->options['menuLabel'].Html::tag('span'), [
+                    'class' =>  'cd-nav-trigger',
+                    'href'  =>  '#cd-primary-nav'
+                ])), [
+                'class' =>  'cd-header-buttons'
+            ]), $this->options['headerOptions']);
+        ;
     }
 
-    public static function end(){
-        echo '<!-- end -->';
+    public function end(){
+        echo $this->renderMenu();
     }
 
     /**
@@ -163,16 +172,6 @@ class Yamm extends Widget
             $items .= $this->renderItem($item);
         }
 
-        $header = Html::tag('header', $this->renderLogo().Html::tag('ul', Html::tag('li', Html::tag('a', $this->options['searchLabel'].Html::tag('span'), [
-                    'class' =>  'cd-search-trigger',
-                    'href'  =>  '#cd-search'
-                ])).Html::tag('li', Html::tag('a', $this->options['menuLabel'].Html::tag('span'), [
-                    'class' =>  'cd-nav-trigger',
-                    'href'  =>  '#cd-primary-nav'
-                ])), [
-                'class' =>  'cd-header-buttons'
-            ]), $this->options['headerOptions']);
-
         $overlay = Html::tag('div', '', [
             'class' =>  'cd-overlay'
         ]);
@@ -192,7 +191,7 @@ class Yamm extends Widget
             'id'    =>  'cd-search'
         ]);
 
-        return $header.$overlay.$nav.$search;
+        return $overlay.$nav.$search;
     }
 
     public function run(){
