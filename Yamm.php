@@ -117,7 +117,7 @@ class Yamm extends Widget
             ]);
 
             foreach($item['items'] as $sItem){
-                $subitems .= $this->renderItem($sItem, $parent);
+                $subitems .= $this->renderItem($sItem, $item);
             }
 
             $r .= Html::tag('ul', $subitems, $item['options']);
