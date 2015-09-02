@@ -36,6 +36,10 @@ Main components
   }
 }
 
+.cd-primary-nav{
+  font-family: sans-serif;
+}
+
 .cd-primary-nav ol, .cd-primary-nav ul{
   list-style: outside none none;
 }
