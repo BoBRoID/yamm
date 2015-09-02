@@ -102,12 +102,6 @@ class Yamm extends Widget
         if($dropdown){
             $subitems = '';
 
-            if(!empty($parent) && is_array($parent)){
-                $subitems .= '<ul class="cd-secondary-nav is-hidden">';
-            }else{
-                $subitems .= '<ul class="is-hidden">';
-            }
-
             if(!isset($item['options'])){
                 $item['options']['class'] = 'is-hidden';
             }else{
@@ -116,7 +110,7 @@ class Yamm extends Widget
                 }
             }
 
-            $subitems .= Html::tag('li', Html::tag('a', '', [
+            $subitems .= Html::tag('li', Html::tag('a', $parent['label'], [
                 'href'  =>  '#0'
             ]), [
                 'class' =>  'go-back'
