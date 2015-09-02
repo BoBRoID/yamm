@@ -40,6 +40,7 @@ Main components
 .cd-main-header {
   height: 50px;
   background: #ffffff;
+  margin-bottom: 20px;
   z-index: 3;
 }
 .nav-is-fixed .cd-main-header {
