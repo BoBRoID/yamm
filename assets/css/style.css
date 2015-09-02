@@ -36,11 +36,6 @@ Main components
   }
 }
 
-.cd-main-content {
-  background: #e2e3df;
-  min-height: 100vh;
-  z-index: 2;
-}
 
 .cd-main-header {
   height: 50px;
