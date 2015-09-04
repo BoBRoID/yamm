@@ -13,7 +13,7 @@
 
 # Sensitive or high-churn files:
 # .idea/dataSources.ids
-# .idea/dataSources.xml
+# .idea/dataSources.xmlcd
 # .idea/sqlDataSources.xml
 # .idea/dynamic.xml
 # .idea/uiDesigner.xml
@@ -44,4 +44,3 @@ atlassian-ide-plugin.xml
 com_crashlytics_export_strings.xml
 crashlytics.properties
 crashlytics-build.properties
-/vendor/
