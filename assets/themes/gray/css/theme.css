@@ -16,16 +16,42 @@ header.cd-main-header{
 }
 
 .cd-main-header .counter{
-
+    background: #6c6f7a;
+    height: 24px;
+    width: 24px;
+    display: inline-block;
+    position: relative;
+    line-height: 24px;
+    text-align: center;
+    border-radius: 24px;
+    margin-left: 3px;
+    color: #fff !important;
 }
 
-.cd-main-header a:hover > *, .cd-header-buttons a:hover > *{
+.cd-main-header a:hover > *, .cd-header-buttons a:hover > *, .cd-main-header .active a > *{
     color: #5dd9da !important;
     -webkit-transition: all 200ms ease-in-out;
     -moz-transition: all 200ms ease-in-out;
     -ms-transition: all 200ms ease-in-out;
     -o-transition: all 200ms ease-in-out;
     transition: all 200ms ease-in-out;
+}
+
+.cd-main-header .cd-primary-nav li{
+    padding: 0 15px;
+    margin-left: 0px;
+}
+
+.cd-main-header .active{
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#33363f+0,1d212c+100 */
+    background: rgb(51,54,63); /* Old browsers */
+    background: -moz-linear-gradient(top, rgba(51,54,63,1) 0%, rgba(29,33,44,1) 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(51,54,63,1)), color-stop(100%,rgba(29,33,44,1))); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top, rgba(51,54,63,1) 0%,rgba(29,33,44,1) 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top, rgba(51,54,63,1) 0%,rgba(29,33,44,1) 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top, rgba(51,54,63,1) 0%,rgba(29,33,44,1) 100%); /* IE10+ */
+    background: linear-gradient(to bottom, rgba(51,54,63,1) 0%,rgba(29,33,44,1) 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#33363f', endColorstr='#1d212c',GradientType=0 ); /* IE6-9 */
 }
 
 .cd-search-trigger{
@@ -43,6 +69,13 @@ header.cd-main-header{
     line-height: 60px;
     vertical-align: top;
     margin-right: 3px;
+}
+
+.cd-main-header .bordered{
+    margin-right: -2px !important;
+    box-shadow:
+    inset 0 0 0 1px #4e515b,
+    inset 0 0 0 2px #242730;
 }
 
 @media only screen and (min-width: 1170px) {
