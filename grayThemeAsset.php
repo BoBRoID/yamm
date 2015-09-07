@@ -22,7 +22,7 @@ class grayThemeAsset extends \yii\web\AssetBundle{
     ];
 
     public $js = [
-        
+
     ];
 
 }

@@ -1,3 +1,14 @@
-*{
-    background: red;
+header.cd-main-header{
+    height: 60px;
+    background: #33363f;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 13px;
+}
+
+.cd-main-header a > *{
+    color: #ffffff !important;
+}
+
+.cd-main-header a:hover > *{
+    color: #5dd9da !important;
 }
