@@ -6,7 +6,7 @@ header.cd-main-header{
     margin-bottom: 25px;
 }
 
-.cd-main-header a > *, .cd-header-buttons a > *{
+.cd-main-header a > *, .cd-header-buttons a > *, .cd-main-header li > a{
     color: #ffffff !important;
     -webkit-transition: all 200ms ease-in-out;
     -moz-transition: all 200ms ease-in-out;
@@ -28,7 +28,7 @@ header.cd-main-header{
     color: #fff !important;
 }
 
-.cd-main-header a:hover > *, .cd-header-buttons a:hover > *, .cd-main-header .active a > *{
+.cd-main-header a:hover > *, .cd-header-buttons a:hover > *, .cd-main-header .active a > *, .cd-main-header li > a:hover{
     color: #5dd9da !important;
     -webkit-transition: all 200ms ease-in-out;
     -moz-transition: all 200ms ease-in-out;
@@ -94,5 +94,9 @@ header.cd-main-header{
 
     .cd-search-trigger{
         height: 44px !important;
+    }
+
+    ul.cd-primary-nav{
+        padding: 0 41% 0 0 !important;
     }
 }
