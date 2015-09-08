@@ -55,13 +55,21 @@ header.cd-main-header{
 }
 
 .cd-search-trigger{
-    color: transparent;
+    color: transparent !important;
     height: 44px;
     margin-top: -10px;
 }
 
+.cd-search-trigger::before {
+    border: 3px solid #fff;
+}
+
+.cd-search-trigger::after, .cd-search-trigger span::before, .cd-search-trigger span::after{
+    background: #fff;
+}
+
 .cd-search-trigger:hover, .cd-search-trigger:active{
-    color: transparent;
+    color: transparent !important;
 }
 
 .cd-main-header .fa{
@@ -97,6 +105,6 @@ header.cd-main-header{
     }
 
     ul.cd-primary-nav{
-        padding: 0 41% 0 0 !important;
+        padding: 0 38% 0 0 !important;
     }
 }
