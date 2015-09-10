@@ -110,5 +110,6 @@ header.cd-main-header{
 }
 
 .cd-main-content{
+    transform: none;
     will-change: transition;
 }
