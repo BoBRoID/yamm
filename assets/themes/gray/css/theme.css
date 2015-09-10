@@ -108,3 +108,7 @@ header.cd-main-header{
         padding: 0 38% 0 0 !important;
     }
 }
+
+.cd-main-content{
+    will-change: transition;
+}
