@@ -9,13 +9,13 @@
 namespace bobroid\yamm;
 
 
-class grayThemeAsset extends \yii\web\AssetBundle{
+class blueThemeAsset extends \yii\web\AssetBundle{
 
     public $depends = [
         'bobroid\yamm\YammAsset',
     ];
 
-    public $sourcePath = '@vendor/bobroid/yamm/assets/themes/gray';
+    public $sourcePath = '@vendor/bobroid/yamm/assets/themes/blue';
 
     public $css = [
         'css/theme.css',
