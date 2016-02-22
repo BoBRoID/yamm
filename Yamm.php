@@ -23,9 +23,6 @@ class Yamm extends Widget
 
 	public $options = [];
 
-	public $typeaheadSearch = false;
-	public $typeaheadConfig = [];
-
 	public $theme;
 	/**
 	 * @var array the dropdown widget options
@@ -45,12 +42,7 @@ class Yamm extends Widget
 	/**
 	 * @inheritdoc
 	 */
-	public function init()
-	{
-		if($this->typeaheadSearch && empty($this->typeaheadConfig)){
-			throw new InvalidConfigException("Невозможно использовать поиск при помощи TypeAhead, если не указан конфиг!");
-		}
-
+	public function init(){
 		$this->options['headerOptions'] = isset($this->options['headerOptions']) ? $this->options['headerOptions'] : [];
 
 		$this->options['headerOptions']['class'] = isset($this->options['headerOptions']['class']) ? 'cd-main-header ' . $this->options['headerOptions']['class'] : 'cd-main-header';
@@ -90,13 +82,10 @@ class Yamm extends Widget
 	public static function begin($config = []){
 		$tthis = parent::begin($config);
 
-		echo Html::tag('header', $tthis->renderLogo().Html::tag('ul', Html::tag('li', Html::tag('a', $tthis->options['searchLabel'].Html::tag('span'), [
-					'class' =>  'cd-search-trigger',
-					'href'  =>  '#cd-search'
-				])).Html::tag('li', Html::tag('a', $tthis->options['menuLabel'].Html::tag('span'), [
-					'class' =>  'cd-nav-trigger',
-					'href'  =>  '#cd-primary-nav'
-				])), [
+		echo Html::tag('header', $tthis->renderLogo().Html::tag('ul', Html::tag('li', Html::tag('a', $tthis->options['menuLabel'].Html::tag('span'), [
+				'class' =>  'cd-nav-trigger',
+				'href'  =>  '#cd-primary-nav'
+			])), [
 				'class' =>  'cd-header-buttons'
 			]), $tthis->options['headerOptions']), '<main class="cd-main-content">';
 	}
@@ -143,12 +132,30 @@ class Yamm extends Widget
 	}
 
 	/**
+	 *
+	 */
+	public function renderSearch($configuration){
+		return Html::tag('div', \kartik\typeahead\Typeahead::widget($configuration), [
+			'class' =>  'search-inline',
+			'id'    =>  'cd-search'
+		]);
+	}
+
+	/**
 	 * @inheritdoc
 	 */
 	public function renderItem($item, $parent = [])
 	{
 		$dropdown = false;
 		$options = [];
+
+		if(isset($item['type'])){
+			switch($item['type']){
+				case 'search':
+					return Html::tag('li', $this->renderSearch($item['pluginOptions']), $item['options']);
+					break;
+			}
+		}
 
 		if(isset($item['items']) && !empty($item['items'])){
 			$dropdown = true;
@@ -226,15 +233,7 @@ class Yamm extends Widget
 			'class' =>  'cd-nav'
 		]);
 
-		$search = Html::tag('div', ($this->typeaheadSearch ? \kartik\typeahead\Typeahead::widget($this->typeaheadConfig) : Html::tag('form', Html::tag('input', '', [
-			'type'          =>  'search',
-			'placeholder'   =>  isset($this->options['searchPlaceholder']) ? $this->options['searchPlaceholder'] : 'Поиск...'
-		]))), [
-			'class' =>  'cd-search',
-			'id'    =>  'cd-search'
-		]);
-
-		return $overlay.$nav.$search;
+		return $overlay.$nav;
 	}
 
 	public function run(){

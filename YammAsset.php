@@ -15,6 +15,7 @@ class YammAsset extends \yii\web\AssetBundle
         'yii\web\YiiAsset',
         'yii\bootstrap\BootstrapAsset',
         'yii\bootstrap\BootstrapPluginAsset',
+        'yii\web\JqueryAsset',
     ];
 
     public $sourcePath = '@vendor/bobroid/yamm/assets/';
