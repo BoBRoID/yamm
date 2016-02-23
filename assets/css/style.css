@@ -65,6 +65,10 @@ Main components
   margin-bottom: 20px;
   z-index: 3;
 }
+
+.cd-main-header:active{
+  outline: none;
+}
 .nav-is-fixed .cd-main-header {
   /* add .nav-is-fixed class to body if you want a fixed navigation on > 1170px */
   position: fixed;
@@ -442,30 +446,6 @@ Main components
   background-repeat: no-repeat;
   background-position: center center;
   background-size: 40px 40px;
-}
-.cd-primary-nav .cd-nav-icons .cd-nav-item.item-1::before {
-  background-image: url("../img/line-icon-1.svg");
-}
-.cd-primary-nav .cd-nav-icons .cd-nav-item.item-2::before {
-  background-image: url("../img/line-icon-2.svg");
-}
-.cd-primary-nav .cd-nav-icons .cd-nav-item.item-3::before {
-  background-image: url("../img/line-icon-3.svg");
-}
-.cd-primary-nav .cd-nav-icons .cd-nav-item.item-4::before {
-  background-image: url("../img/line-icon-4.svg");
-}
-.cd-primary-nav .cd-nav-icons .cd-nav-item.item-5::before {
-  background-image: url("../img/line-icon-5.svg");
-}
-.cd-primary-nav .cd-nav-icons .cd-nav-item.item-6::before {
-  background-image: url("../img/line-icon-6.svg");
-}
-.cd-primary-nav .cd-nav-icons .cd-nav-item.item-7::before {
-  background-image: url("../img/line-icon-7.svg");
-}
-.cd-primary-nav .cd-nav-icons .cd-nav-item.item-8::before {
-  background-image: url("../img/line-icon-8.svg");
 }
 @media only screen and (max-width: 1169px) {
   .cd-primary-nav {
