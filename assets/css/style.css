@@ -66,7 +66,7 @@ Main components
   z-index: 3;
 }
 
-.cd-main-header *:active{
+.cd-main-header *:active, .cd-main-header *:focus{
   outline: none;
 }
 .nav-is-fixed .cd-main-header {
